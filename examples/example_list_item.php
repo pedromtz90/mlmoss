@@ -27,10 +27,10 @@ if($_GET['code']) {
 
 	// We construct the item to POST
 	$item = array(
-		"title" => "Item De Teste - Por Favor, Não Ofertar! --kc:off",
+		"title" => "PRODCUTO DE PRUEBA NO OFERTAR! --kc:off",
         "category_id" => "MLB257111",
         "price" => 10,
-        "currency_id" => "BRL",
+        "currency_id" => "MX",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
