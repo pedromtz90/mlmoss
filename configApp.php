@@ -3,13 +3,11 @@
 /* Go to My Apps dashboard: https://developers.mercadolibre.com.ar/apps/home, and get the information you need in order to the following enviroment variables */
 
 /* Your Application Id */
-$appId = getenv('5957759582547304');
-
+$appId = getenv('App_ID');
 /* Your Secret Key */
-$secretKey = getenv('m6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
-
+$secretKey = getenv('Secret_Key');
 /* The Redirect url */
-$redirectURI = getenv('https://mlmossmx.herokuapp.com');
+$redirectURI = getenv('Redirect_URI');
 
 /* The site id of the country where your application will work.
 If you don't know your site_id go to our sites resources: https://api.mercadolibre.com/sites  */
