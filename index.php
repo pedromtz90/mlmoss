@@ -52,14 +52,14 @@ $appName = explode('.', $domain)[0];
                     <p>Primero nos autenificamos</p>
 
                     <?php
-                    $meli = new Meli($appId, $secretKey);
+                   $meli = new Meli('5957759582547304', 'm6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
 
                     if($_GET['code'] || $_SESSION['access_token']) {
 
                         // If code exist and session is empty
                         if($_GET['code'] && !($_SESSION['access_token'])) {
                             // If the code was in get parameter we authorize
-                            $user = $meli->authorize($_GET['code'], $redirectURI);
+                            $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/examples/index.php');
 
                             // Now we create the sessions with the authenticated user
                             $_SESSION['access_token'] = $user['body']->access_token;
@@ -87,7 +87,7 @@ $appName = explode('.', $domain)[0];
                         echo '</pre>';
 
                     } else {
-                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
+                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/examples/index.php', Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
                     }
                     ?>
 
@@ -97,34 +97,68 @@ $appName = explode('.', $domain)[0];
             <hr>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Publish an Item</h3>
+                    <h3>Publicar Producto/h3>
                     <p>
-                        This is a example of how to list an item in <b>MLB</b> (Brasil).
-                       <br /> <b>You need to be authenticated to make it work.</b>
-                       <br /> To be able to list an item in another country, <a href="https://github.com/mercadolibre/php-sdk/blob/master/examples/example_list_item.php">please update this file</a>, with values according to the site Id where your app works, like <b>category_id</b> and <b>currency</b>.
-                     <br />
+                       
+                       <br /> <b>Necesitamos primero tener el token</b>
+                       
                     </p>
                     <pre class="pre-item">
-"title" => "Prueba de producto! --kc:off",
-        "category_id" => "MLB1227",
+"title" => "Prueba de producto! NO OFERTAR PRODUCTO DE PRUEBA",
+        "category_id" => "MLM1055",
         "price" => 10,
-        "currency_id" => "MX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
         "condition" => "new",
-        "description" => "prueba de producto",
+        "description" => array ("plain_text" => "producto de prueba"),
         "video_id" => "RXWn6kftTHY",
         "warranty" => "12 month",
         "pictures" => array(
             array(
-                "source" => "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ray_Ban_Original_Wayfarer.jpg"
+                "source" => "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/IPhone_7_Plus_Jet_Black.svg/440px-IPhone_7_Plus_Jet_Black.svg.png"
             ),
             array(
-                "source" => "https://upload.wikimedia.org/wikipedia/commons/a/ab/Teashades.gif"
+                "source" => "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/IPhone7.jpg/440px-IPhone7.jpg"
+            )
+        ),
+        "attributes" => array(
+            array(
+                "id" => "EAN",
+                "value_name" => "190198043566"
+            ),
+            array(
+                "id" => "COLOR",
+                "value_id" => "52019"
+            ),
+            array(
+                "id" => "INTERNAL_MEMORY",
+                "value_name" => "32 GB"
+            ),
+           
+            array(
+                "id" => "WITH_TOUCH_SCREEN",
+                "value_id" => "242085"
+                    
+            ),
+            array(
+                "id" => "SIM_SIZES",
+                "value_id" => "80452"
+            
+          
+            ),
+            array(
+                "id" => "BATTERY_CAPACITY",
+                "value_name" => "3980 mAh"
+            ),
+            array(
+                "id" => "FRONT_CAMERA_RESOLUTION",
+                "value_name" => "7 mpx"
             )
         )
-    )
+    );
+	
                     </pre>
 
                     <?php
@@ -151,26 +185,61 @@ $appName = explode('.', $domain)[0];
 
                         // We construct the item to POST
                         $item = array(
-                            "title" => "PRODUCTO DE PRUEBA NO OFERTAR! --kc:off",
-        "category_id" => "MLB1227",
+                            "title" => "Prueba de producto! NO OFERTAR ",
+        "category_id" => "MLM1055",
         "price" => 10,
-        "currency_id" => "MX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
         "condition" => "new",
-        "description" => "PRODUCTO DE PRUEBA",
+        "description" => array ("plain_text" => "producto de prueba"),
         "video_id" => "RXWn6kftTHY",
         "warranty" => "12 month",
         "pictures" => array(
             array(
-                "source" => "https://upload.wikimedia.org/wikipedia/commons/f/fd/Ray_Ban_Original_Wayfarer.jpg"
+                "source" => "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/IPhone_7_Plus_Jet_Black.svg/440px-IPhone_7_Plus_Jet_Black.svg.png"
             ),
             array(
-                "source" => "https://upload.wikimedia.org/wikipedia/commons/a/ab/Teashades.gif"
+                "source" => "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/IPhone7.jpg/440px-IPhone7.jpg"
+            )
+        ),
+        "attributes" => array(
+            array(
+                "id" => "EAN",
+                "value_name" => "190198043566"
+            ),
+            array(
+                "id" => "COLOR",
+                "value_id" => "52019"
+            ),
+            array(
+                "id" => "INTERNAL_MEMORY",
+                "value_name" => "16 GB"
+            ),
+           
+            array(
+                "id" => "WITH_TOUCH_SCREEN",
+                "value_id" => "242085"
+                    
+            ),
+            array(
+                "id" => "SIM_SIZES",
+                "value_id" => "80452"
+            
+          
+            ),
+            array(
+                "id" => "BATTERY_CAPACITY",
+                "value_name" => "3980 mAh"
+            ),
+            array(
+                "id" => "FRONT_CAMERA_RESOLUTION",
+                "value_name" => "7 mpx"
             )
         )
     );
+	
                         
                         $response = $meli->post('/items', $item, array('access_token' => $_SESSION['access_token']));
 
@@ -180,14 +249,14 @@ $appName = explode('.', $domain)[0];
                         print_r ($response);
                         echo '</pre>';
 
-                        echo "<h4>Success! Your test item was listed!</h4>";
-                        echo "<p>Go to the permalink to see how it's looking in our site.</p>";
+                        echo "<h4>insertado con exito!</h4>";
+                        echo "<p>va a ver tu producto</p>";
                         echo '<a target="_blank" href="'.$response["body"]->permalink.'">'.$response["body"]->permalink.'</a><br />';
 
                     } else if($_GET['code']) {
-                        echo '<p><a alt="Publish Item" class="btn" href="/?code='.$_GET['code'].'&publish_item=ok">Publish Item</a></p>';
+                        echo '<p><a alt="Publish Item" class="btn" href="/?code='.$_GET['code'].'&publish_item=ok">Publicar Producto</a></p>';
                     } else {
-                        echo '<p><a alt="Publish Item" class="btn disable" href="#">Publish Item</a> </p>';
+                        echo '<p><a alt="Publish Item" class="btn disable" href="#">Publicar Producto</a> </p>';
                     }
                     ?>
 
