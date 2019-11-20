@@ -68,15 +68,8 @@ if($_GET['code']) {
             array(
                 "id" => "SIM_SIZES",
                 "value_id" => "80452"
-            ),
             
-            array(
-                "id" => "OPERATING_SYSTEM_VERSION",
-                "value_id" => "iOS 10"
-            ),
-            array(
-                "id" => "DISPLAY_RESOLUTION",
-                "value_id" => "1920 x 1080"
+          
             ),
             array(
                 "id" => "BATTERY_CAPACITY",
