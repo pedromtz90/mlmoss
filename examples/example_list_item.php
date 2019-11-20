@@ -109,5 +109,5 @@ if($_GET['code']) {
 
 } else {
 
-	echo '<a href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com', Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
+	echo '<a href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/examples/example_list_item.php', Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
 }
