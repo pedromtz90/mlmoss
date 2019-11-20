@@ -9,7 +9,7 @@ $meli = new Meli('5957759582547304', 'm6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
 if($_GET['code']) {
 
 	// If the code was in get parameter we authorize
-	$user = $meli->authorize($_GET['code'], $redirectURI);
+	$user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/examples/example_list_item.php');
 
 	// Now we create the sessions with the authenticated user
 	$_SESSION['access_token'] = $user['body']->access_token;
@@ -27,7 +27,7 @@ if($_GET['code']) {
 
 	// We construct the item to POST
 	$item = array(
-		"title" => "Item De Teste - Por Favor, Não Ofertar! --kc:off",
+		"title" => "Prueba de producto! --kc:off",
         "category_id" => "MLM1051",
         "price" => 10,
         "currency_id" => "MXN",
