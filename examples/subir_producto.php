@@ -27,7 +27,7 @@ if($_GET['code']) {
 
 	// We construct the item to POST
 	$item = array(
-		"title" => "Prueba de producto! --kc:off",
+		"title" => "Prueba de producto! NO OFERTAR",
         "category_id" => "MLM1055",
         "price" => 10,
         "currency_id" => "MXN",
@@ -35,7 +35,7 @@ if($_GET['code']) {
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
         "condition" => "new",
-        "description" => array ("plain_text" => "producto de prueba"),
+        "description" => array ("plain_text" => " PRODUCTO DE PRUEBA NO OFERTAR"),
         "video_id" => "RXWn6kftTHY",
         "warranty" => "12 month",
         "pictures" => array(
