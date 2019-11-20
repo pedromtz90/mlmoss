@@ -9,7 +9,7 @@ $meli = new Meli('5957759582547304', 'm6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
 if($_GET['code']) {
 
 	// If the code was in get parameter we authorize
-	$user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/examples/example_list_item.php');
+	$user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/examples/subir_producto.php');
 
 	// Now we create the sessions with the authenticated user
 	$_SESSION['access_token'] = $user['body']->access_token;
@@ -89,5 +89,5 @@ if($_GET['code']) {
 
 } else {
 
-	echo '<a href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/examples/example_list_item.php', Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
+	echo '<a href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/examples/subir_producto', Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
 }
