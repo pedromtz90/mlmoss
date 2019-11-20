@@ -28,14 +28,14 @@ if($_GET['code']) {
 	// We construct the item to POST
 	$item = array(
 		"title" => "Prueba de producto! --kc:off",
-        "category_id" => "MLM1051",
+        "category_id" => "MLB1227",
         "price" => 10,
         "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
         "condition" => "new",
-        "description" => array ("plain_text" => "Item de Teste. Mercado Livre's PHP SDK."),
+        "description" => array ("plain_text" => "producto de prueba"),
         "video_id" => "RXWn6kftTHY",
         "warranty" => "12 month",
         "pictures" => array(
@@ -61,7 +61,7 @@ if($_GET['code']) {
             ),
             array(
                 "id" => "SCREEN_SIZE",
-                "value_name" => "4.7 polegadas"
+                "value_name" => "4.7 PULGADAS"
             ),
             array(
                 "id" => "TOUCH_SCREEN",
