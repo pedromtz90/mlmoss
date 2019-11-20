@@ -57,11 +57,11 @@ if($_GET['code']) {
             ),
             array(
                 "id" => "INTERNAL_MEMORY",
-                "value_name" => "16GB"
+                "value_name" => "16 GB"
             ),
            
             array(
-                "id" => "TOUCH_SCREEN",
+                "id" => "WITH_TOUCH_SCREEN",
                 "value_id" => "242085"
                     
             ),
@@ -69,10 +69,7 @@ if($_GET['code']) {
                 "id" => "SIM_SIZES",
                 "value_id" => "80452"
             ),
-            array(
-                "id" => "OPERATING_SYSTEM",
-                "value_id" => "296859"
-            ),
+            
             array(
                 "id" => "OPERATING_SYSTEM_VERSION",
                 "value_id" => "iOS 10"
