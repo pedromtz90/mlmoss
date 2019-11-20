@@ -14,7 +14,7 @@ $appName = explode('.', $domain)[0];
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="Official PHP SDK for Mercado Libre's API.">
+        <meta name="description" content="Mercado Libre's API.">
         <meta name="keywords" content="API, PHP, Mercado Libre, SDK, meli, integration, e-commerce">
         <title>Mercado Libre PHP SDK</title>
         <link rel="stylesheet" href="/getting-started/style.css" />
@@ -59,7 +59,7 @@ $appName = explode('.', $domain)[0];
                         // If code exist and session is empty
                         if($_GET['code'] && !($_SESSION['access_token'])) {
                             // If the code was in get parameter we authorize
-                            $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/index.php');
+                            $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com');
 
                             // Now we create the sessions with the authenticated user
                             $_SESSION['access_token'] = $user['body']->access_token;
@@ -87,7 +87,7 @@ $appName = explode('.', $domain)[0];
                         echo '</pre>';
 
                     } else {
-                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/index.php', Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
+                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com', Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
                     }
                     ?>
 
@@ -97,7 +97,7 @@ $appName = explode('.', $domain)[0];
             <hr>
             <div class="row">
                 <div class="col-md-6">
-                    <h3>Publicar Producto/h3>
+                    <h3>Publicar Producto </h3>
                     <p>
                        
                        <br /> <b>Necesitamos primero tener el token</b>
@@ -162,12 +162,12 @@ $appName = explode('.', $domain)[0];
                     </pre>
 
                     <?php
-                    $meli = new Meli($appId, $secretKey);
+                  $meli = new Meli('5957759582547304', 'm6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
 
                     if($_GET['code'] && $_GET['publish_item']) {
 
                         // If the code was in get parameter we authorize
-                        $user = $meli->authorize($_GET['code'], $redirectURI);
+                        $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com');
 
                         // Now we create the sessions with the authenticated user
                         $_SESSION['access_token'] = $user['body']->access_token;
@@ -268,7 +268,7 @@ $appName = explode('.', $domain)[0];
             <hr>
 
             <div class="row">
-                <h3>Your Credentials</h3>
+                <h3>Credenciales</h3>
                 <div class="row-info col-sm-3 col-md-3">
                     <b>App_Id: </b>
                     <?php echo $appId; ?>
