@@ -4,7 +4,7 @@ session_start();
 require '../Meli/meli.php';
 require '../configApp.php';
 
-$meli = new Meli($appId, $secretKey);
+$meli = new Meli('5957759582547304', 'm6v9Op5FS1YAD9j6C7Z7MAksfXzdK7jc');
 
 if($_GET['code']) {
 
@@ -27,15 +27,15 @@ if($_GET['code']) {
 
 	// We construct the item to POST
 	$item = array(
-		"title" => "producto de prueba! --kc:off",
-        "category_id" => "MLB257111",
+		"title" => "Item De Teste - Por Favor, Não Ofertar! --kc:off",
+        "category_id" => "MLM1051",
         "price" => 10,
-        "currency_id" => "MX",
+        "currency_id" => "MXN",
         "available_quantity" => 1,
         "buying_mode" => "buy_it_now",
         "listing_type_id" => "bronze",
         "condition" => "new",
-        "description" => array ("plain_text" => "Prodcuto de prueba moss."),
+        "description" => array ("plain_text" => "Item de Teste. Mercado Livre's PHP SDK."),
         "video_id" => "RXWn6kftTHY",
         "warranty" => "12 month",
         "pictures" => array(
@@ -109,6 +109,5 @@ if($_GET['code']) {
 
 } else {
 
-	echo '<a href="' . $meli->getAuthUrl($redirectURI, Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
+	echo '<a href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com', Meli::$AUTH_URL['MLM']) . '">Login using MercadoLibre oAuth 2.0</a>';
 }
-
