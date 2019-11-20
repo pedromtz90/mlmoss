@@ -28,7 +28,7 @@ if($_GET['code']) {
 	// We construct the item to POST
 	$item = array(
 		"title" => "Prueba de producto! --kc:off",
-        "category_id" => "MLB1227",
+        "category_id" => "MLM1055",
         "price" => 10,
         "currency_id" => "MXN",
         "available_quantity" => 1,
@@ -53,31 +53,21 @@ if($_GET['code']) {
             ),
             array(
                 "id" => "COLOR",
-                "value_id" => "52049"
+                "value_id" => "52019"
             ),
             array(
-                "id" => "WEIGHT",
-                "value_name" => "188g"
+                "id" => "INTERNAL_MEMORY",
+                "value_name" => "16GB"
             ),
-            array(
-                "id" => "SCREEN_SIZE",
-                "value_name" => "4.7 PULGADAS"
-            ),
+           
             array(
                 "id" => "TOUCH_SCREEN",
                 "value_id" => "242085"
+                    
             ),
             array(
-                "id" => "DIGITAL_CAMERA",
-                "value_id" => "242085"
-            ),
-            array(
-                "id" => "GPS",
-                "value_id" => "242085"
-            ),
-            array(
-                "id" => "MP3",
-                "value_id" => "242085"
+                "id" => "SIM_SIZES",
+                "value_id" => "80452"
             ),
             array(
                 "id" => "OPERATING_SYSTEM",
