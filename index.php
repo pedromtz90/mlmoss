@@ -254,7 +254,7 @@ $appName = explode('.', $domain)[0];
                         echo '<a target="_blank" href="'.$response["body"]->permalink.'">'.$response["body"]->permalink.'</a><br />';
 
                     } else if($_GET['code']) {
-                        echo '<p><a alt="Publish Item" class="btn" href="/?code='.$_GET['code'].'&publish_item=ok">Publicar Producto</a></p>';
+                        echo '<p><a alt="Publish Item" class="btn" href="../examples/subir_producto.php">Publicar Producto</a></p>';
                     } else {
                         echo '<p><a alt="Publish Item" class="btn disable" href="#">Publicar Producto</a> </p>';
                     }
