@@ -59,7 +59,7 @@ $appName = explode('.', $domain)[0];
                         // If code exist and session is empty
                         if($_GET['code'] && !($_SESSION['access_token'])) {
                             // If the code was in get parameter we authorize
-                            $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/examples/index.php');
+                            $user = $meli->authorize($_GET['code'], 'https://mlmossmx.herokuapp.com/index.php');
 
                             // Now we create the sessions with the authenticated user
                             $_SESSION['access_token'] = $user['body']->access_token;
@@ -87,7 +87,7 @@ $appName = explode('.', $domain)[0];
                         echo '</pre>';
 
                     } else {
-                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/examples/index.php', Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
+                        echo '<p><a alt="Login using MercadoLibre oAuth 2.0" class="btn" href="' . $meli->getAuthUrl('https://mlmossmx.herokuapp.com/index.php', Meli::$AUTH_URL[$siteId]) . '">Authenticate</a></p>';
                     }
                     ?>
 
